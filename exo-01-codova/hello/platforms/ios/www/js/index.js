@@ -33,11 +33,14 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
+        var TimeDate = document.getElementById("timestamp");
+        TimeDate.innerHTML = new Date();
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        receivedElement.setAttribute('style', 'display:none;');
+        TimeDate.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     }
